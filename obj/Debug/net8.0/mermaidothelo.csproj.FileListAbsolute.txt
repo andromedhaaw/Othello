@@ -1,0 +1,14 @@
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\bin\Debug\net8.0\mermaidothelo.exe
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\bin\Debug\net8.0\mermaidothelo.deps.json
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\bin\Debug\net8.0\mermaidothelo.runtimeconfig.json
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\bin\Debug\net8.0\mermaidothelo.dll
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\bin\Debug\net8.0\mermaidothelo.pdb
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.dll
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\refint\mermaidothelo.dll
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.pdb
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\ref\mermaidothelo.dll

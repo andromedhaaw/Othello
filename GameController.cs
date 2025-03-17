@@ -32,7 +32,7 @@ namespace OthelloGame
             _display.DisplayMessage("- Black (B) plays first");
             _display.DisplayMessage("- Valid moves are shown with a * symbol");
             _display.DisplayMessage("- Type 'quit' to exit game");
-            _display.DisplayMessage("- Type 'undo' to undo last move");
+            
             _display.DisplayMessage("\nPress any key to start...");
             Console.ReadKey();
 
@@ -64,7 +64,7 @@ namespace OthelloGame
                     continue;
                 }
 
-                _display.DisplayMessage("Enter your move (e.g., A1, B2), 'undo' to undo last move or 'quit': ");
+                _display.DisplayMessage("Enter your move (e.g., A1, B2), or 'quit': ");
                 string input = _display.AskNonNullInput().ToUpper();
 
                 if (input == "QUIT")
@@ -73,20 +73,7 @@ namespace OthelloGame
                     break;
                 }
 
-                if (input == "UNDO")
-                {
-                    if (_moveHistory.CanUndo())
-                    {
-                        Player player = _players[_currentPlayer];
-                        _moveHistory.Undo(_board, ref player);
-                        _currentPlayer = Array.FindIndex(_players, p => p.Color == player.Color);
-                    }
-                    else
-                    {
-                        _display.DisplayMessage("No moves to undo.");
-                    }
-                    continue;
-                }
+                
 
                 if (TryParseMove(input, out int row, out int col) && IsValidMove(row, col, currentPlayer))
                 {

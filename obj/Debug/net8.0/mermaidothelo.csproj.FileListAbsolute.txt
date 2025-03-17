@@ -12,3 +12,4 @@ C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\refint\
 C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.pdb
 C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.genruntimeconfig.cache
 C:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\ref\mermaidothelo.dll
+c:\Users\Batch 12\Documents\mermaidothelo\mermaidothelo\obj\Debug\net8.0\mermaidothelo.sourcelink.json

@@ -12,6 +12,9 @@ namespace OthelloGame
         private Display _display;
         private MoveHistory _moveHistory;
         private Action _switchTurn;
+        
+        
+        private Func<int, int, bool> _isInsideBoard;
 
         public GameController(Board board, Display display)
         {
@@ -22,6 +25,13 @@ namespace OthelloGame
             _gameState = GameState.Playing;
             _moveHistory = new MoveHistory();
             _switchTurn = () => _currentPlayer = (_currentPlayer == 0) ? 1 : 0;
+
+            // Initialize _isInsideBoard as a Func
+            _isInsideBoard = (row, col) =>
+            {
+                return row >= 0 && row < _board.GetBoard().GetLength(0) && 
+                       col >= 0 && col < _board.GetBoard().GetLength(1);
+            };
         }
 
         public void Play()
@@ -72,8 +82,6 @@ namespace OthelloGame
                     _display.DisplayMessage("Thanks for playing!");
                     break;
                 }
-
-                
 
                 if (TryParseMove(input, out int row, out int col) && IsValidMove(row, col, currentPlayer))
                 {
@@ -204,12 +212,6 @@ namespace OthelloGame
             }
 
             return (blackCount, whiteCount);
-        }
-
-        private bool _isInsideBoard(int row, int col)
-        {
-            return row >= 0 && row < _board.GetBoard().GetLength(0) && 
-                   col >= 0 && col < _board.GetBoard().GetLength(1);
         }
 
         private void DisplayWinner()

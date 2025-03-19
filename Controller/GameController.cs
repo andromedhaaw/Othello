@@ -10,7 +10,7 @@ namespace OthelloGame
         private int _currentPlayer;
         private GameState _gameState;
         private Display _display;
-        private MoveHistory _moveHistory;
+       
         private Action _switchTurn;
         private Func<int, int, bool> _isInsideBoard;
 
@@ -21,7 +21,7 @@ namespace OthelloGame
             _players = new Player[] { new Player(PieceColor.Black), new Player(PieceColor.White) };
             _currentPlayer = 0;
             _gameState = GameState.Playing;
-            _moveHistory = new MoveHistory();
+            
             _switchTurn = () => _currentPlayer = (_currentPlayer == 0) ? 1 : 0;
 
             // Initialize _isInsideBoard as a Func
@@ -37,7 +37,7 @@ namespace OthelloGame
             _display.DisplayMessage("Welcome to Othello/Reversi!");
             _display.DisplayMessage("Instructions:");
             _display.DisplayMessage("- Enter your move in format like A1, C5, etc.");
-            _display.DisplayMessage("- Black (B) plays first");
+            _display.DisplayMessage("- Black (O) plays first");
             _display.DisplayMessage("- Valid moves are shown with a * symbol");
             _display.DisplayMessage("- Type 'quit' to exit game");
             
@@ -83,7 +83,7 @@ namespace OthelloGame
 
                 if (TryParseMove(input, out int row, out int col) && IsValidMove(row, col, currentPlayer))
                 {
-                    _moveHistory.SaveState(_board, _players[_currentPlayer]);
+                    
                     PlacePiece(row, col, currentPlayer);
                     _switchTurn();
                 }
@@ -128,7 +128,7 @@ namespace OthelloGame
 
                     while (_isInsideBoard(r, c) && 
                         _board.GetBoard()[r, c] != null && 
-                        _board.GetBoard()[r, c].Color == opponentColor)
+                        _board.GetBoard()[r, c]?.Color == opponentColor)
                     {
                         piecesToFlip.Add(new Position(r, c));
                         r += dRow;
@@ -137,7 +137,7 @@ namespace OthelloGame
 
                     if (_isInsideBoard(r, c) && 
                         _board.GetBoard()[r, c] != null && 
-                        _board.GetBoard()[r, c].Color == player.Color)
+                        _board.GetBoard()[r, c]?.Color == player.Color)
                     {
                         flippablePieces.AddRange(piecesToFlip);
                     }
@@ -203,7 +203,7 @@ namespace OthelloGame
                 {
                     if (_board.GetBoard()[i, j] != null)
                     {
-                        if (_board.GetBoard()[i, j].Color == PieceColor.Black) blackCount++;
+                        if (_board.GetBoard()[i, j]?.Color == PieceColor.Black) blackCount++;
                         else whiteCount++;
                     }
                 }

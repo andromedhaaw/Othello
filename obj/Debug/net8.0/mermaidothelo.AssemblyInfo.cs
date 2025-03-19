@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mermaidothelo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03dd6231bfa6e5f071cee9c3b531e22b8909626a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba7de24e2d87fe9dc13b7267ff516c27e2a172f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("mermaidothelo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mermaidothelo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -40,7 +40,7 @@ namespace OthelloGame
                             else if (grid[i, j]?.Color == PieceColor.White)
                                 Console.ForegroundColor = ConsoleColor.White;
 
-                            Console.Write(grid[i, j]?.Color == PieceColor.Black ? "B " : "W ");
+                            Console.Write(grid[i, j]?.Color == PieceColor.Black ? "O " : "X ");
                             Console.ResetColor();
                         }
                         else
@@ -60,7 +60,7 @@ namespace OthelloGame
 
         public string AskNonNullInput()
         {
-            string input = Console.ReadLine();
+            string input = Console.ReadLine() ?? string.Empty;
             return input ?? string.Empty;
         }
     }

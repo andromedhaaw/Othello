@@ -1,9 +1,9 @@
-﻿using OthelloGame.Interfaces;  // For IBoard, IDisplay
+﻿using OthelloGame.Interfaces;  // For Interface
 using OthelloGame.Models;      // For Position, Player, Piece, Board, and Display
 
 namespace OthelloGame
 {
-    static class Program
+    class Program
     {
         static void Main(string[] args)
         {

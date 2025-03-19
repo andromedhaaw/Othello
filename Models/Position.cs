@@ -1,6 +1,8 @@
-namespace OthelloGame
+namespace OthelloGame.Models
 {
-    public struct Position
+    using OthelloGame.Interfaces;
+
+    public struct Position : IPosition
     {
         public int Row { get; }
         public int Col { get; }

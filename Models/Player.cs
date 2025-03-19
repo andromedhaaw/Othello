@@ -1,6 +1,8 @@
-namespace OthelloGame
+namespace OthelloGame.Models
 {
-    class Player
+    using OthelloGame.Interfaces;
+
+    public class Player : IPlayer
     {
         public PieceColor Color { get; }
         public int Score { get; set; }

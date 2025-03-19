@@ -1,13 +1,23 @@
-﻿namespace OthelloGame
+﻿using OthelloGame.Interfaces;  // For IBoard, IDisplay
+using OthelloGame.Models;      // For Position, Player, Piece, Board, and Display
+
+namespace OthelloGame
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
-            Board board = new Board();
-            Display display = new Display();
-            GameController gameController = new GameController(board, display);
-            gameController.Play();
+            // Create a Board object implementing IBoard
+            IBoard board = new Board();  
+
+            // Create a Display object implementing IDisplay
+            IDisplay display = new Display();  
+
+            // Create the GameManager and pass in the IBoard and IDisplay
+            GameManager gameManager = new GameManager(board, display);
+
+            // Start the game through GameManager
+            gameManager.Play();
         }
     }
 }

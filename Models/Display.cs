@@ -1,12 +1,12 @@
-
-using System;
-using System.Collections.Generic;
-
-namespace OthelloGame
+namespace OthelloGame.Models
 {
-    class Display
+    using OthelloGame.Interfaces;
+    using System;
+    using System.Collections.Generic;
+
+    public class Display : IDisplay
     {
-        public void DisplayBoard(Board board, List<Position> validMoves)
+        public void DisplayBoard(IBoard board, List<IPosition> validMoves)
         {
             Console.Clear();
             Console.WriteLine("  A B C D E F G H");

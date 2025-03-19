@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\bc formulatrix\\mermaidothello\\Othello\\mermaidothelo.csproj": {}
+    "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\mermaidothelo.csproj": {}
   },
   "projects": {
-    "D:\\bc formulatrix\\mermaidothello\\Othello\\mermaidothelo.csproj": {
+    "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\mermaidothelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\bc formulatrix\\mermaidothello\\Othello\\mermaidothelo.csproj",
+        "projectUniqueName": "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\mermaidothelo.csproj",
         "projectName": "mermaidothelo",
-        "projectPath": "D:\\bc formulatrix\\mermaidothello\\Othello\\mermaidothelo.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "D:\\bc formulatrix\\mermaidothello\\Othello\\obj\\",
+        "projectPath": "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\mermaidothelo.csproj",
+        "packagesPath": "C:\\Users\\Batch 12\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Batch 12\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

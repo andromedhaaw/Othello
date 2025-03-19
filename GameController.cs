@@ -14,6 +14,7 @@ namespace OthelloGame
         private Action _switchTurn;
         
         
+        
         private Func<int, int, bool> _isInsideBoard;
 
         public GameController(Board board, Display display)

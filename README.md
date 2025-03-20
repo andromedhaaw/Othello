@@ -68,11 +68,19 @@ Instructions:
 - Valid moves are shown with a * symbol
 - Type 'quit' to exit game
 
-Press any key to start...
-Enter your move (e.g., A1, B2), or 'quit': A1
-Player O's turn.
-...
-```
+  A B C D E F G H
+1 . . . . . . . .
+2 . . . . . . . .
+3 . . . . . . . .
+4 . . . X O * . .
+5 . . . O O . . .
+6 . . . * O * . .
+7 . . . . . . . .
+8 . . . . . . . .
+Score - Black: 4 | White: 1
+Player White's turn.
+Enter your move (e.g., A1, B2), or 'quit': 
+
 
 ## Game Rules
 

@@ -1,33 +1,34 @@
 using System;
 using System.Collections.Generic;
+using OthelloGame.Interfaces;  // For IBoard, IPlayer, IDisplay
+using OthelloGame.Models;     // For Position, Player, Piece, etc.
 
 namespace OthelloGame
 {
     class GameController
     {
-        private Board _board;
-        private Player[] _players;
+        private IBoard _board;
+        private IPlayer[] _players;
         private int _currentPlayer;
         private GameState _gameState;
-        private Display _display;
-       
+        private IDisplay _display;
+
         private Action _switchTurn;
         private Func<int, int, bool> _isInsideBoard;
 
-        public GameController(Board board, Display display)
+        public GameController(IBoard board, IDisplay display)
         {
             _board = board;
             _display = display;
-            _players = new Player[] { new Player(PieceColor.Black), new Player(PieceColor.White) };
+            _players = new IPlayer[] { new Player(PieceColor.Black), new Player(PieceColor.White) };
             _currentPlayer = 0;
             _gameState = GameState.Playing;
-            
+
             _switchTurn = () => _currentPlayer = (_currentPlayer == 0) ? 1 : 0;
 
-            // Initialize _isInsideBoard as a Func
             _isInsideBoard = (row, col) =>
             {
-                return row >= 0 && row < _board.GetBoard().GetLength(0) && 
+                return row >= 0 && row < _board.GetBoard().GetLength(0) &&
                        col >= 0 && col < _board.GetBoard().GetLength(1);
             };
         }
@@ -40,16 +41,16 @@ namespace OthelloGame
             _display.DisplayMessage("- Black (O) plays first");
             _display.DisplayMessage("- Valid moves are shown with a * symbol");
             _display.DisplayMessage("- Type 'quit' to exit game");
-            
+
             _display.DisplayMessage("\nPress any key to start...");
             Console.ReadKey();
 
             while (_gameState == GameState.Playing)
             {
-                Player currentPlayer = _players[_currentPlayer];
+                IPlayer currentPlayer = _players[_currentPlayer];
                 List<Position> validMoves = GetValidMoves(currentPlayer);
 
-                _display.DisplayBoard(_board, validMoves);
+                _display.DisplayBoard(_board, validMoves.ConvertAll(pos => (IPosition)pos));
                 var (blackCount, whiteCount) = GetScoreCounts();
                 _display.DisplayMessage($"Score - Black: {blackCount} | White: {whiteCount}");
                 _display.DisplayMessage($"Player {currentPlayer.Color}'s turn.");
@@ -59,7 +60,7 @@ namespace OthelloGame
                     List<Position> opponentMoves = GetValidMoves(_players[(_currentPlayer + 1) % 2]);
                     if (opponentMoves.Count == 0)
                     {
-                        _display.DisplayBoard(_board, new List<Position>());
+                        _display.DisplayBoard(_board, new List<IPosition>());
                         DisplayWinner();
                         _gameState = GameState.Finished;
                         break;
@@ -83,7 +84,6 @@ namespace OthelloGame
 
                 if (TryParseMove(input, out int row, out int col) && IsValidMove(row, col, currentPlayer))
                 {
-                    
                     PlacePiece(row, col, currentPlayer);
                     _switchTurn();
                 }
@@ -95,7 +95,7 @@ namespace OthelloGame
             }
         }
 
-        private bool PlacePiece(int row, int col, Player player)
+        private bool PlacePiece(int row, int col, IPlayer player)
         {
             if (!IsValidMove(row, col, player))
                 return false;
@@ -110,7 +110,7 @@ namespace OthelloGame
             return true;
         }
 
-        private List<Position> GetFlippablePieces(int row, int col, Player player)
+        private List<Position> GetFlippablePieces(int row, int col, IPlayer player)
         {
             List<Position> flippablePieces = new List<Position>();
             PieceColor opponentColor = (player.Color == PieceColor.Black) ? PieceColor.White : PieceColor.Black;
@@ -126,8 +126,8 @@ namespace OthelloGame
                     int c = col + dCol;
                     List<Position> piecesToFlip = new List<Position>();
 
-                    while (_isInsideBoard(r, c) && 
-                        _board.GetBoard()[r, c] != null && 
+                    while (_isInsideBoard(r, c) &&
+                        _board.GetBoard()[r, c] != null &&
                         _board.GetBoard()[r, c]?.Color == opponentColor)
                     {
                         piecesToFlip.Add(new Position(r, c));
@@ -135,8 +135,8 @@ namespace OthelloGame
                         c += dCol;
                     }
 
-                    if (_isInsideBoard(r, c) && 
-                        _board.GetBoard()[r, c] != null && 
+                    if (_isInsideBoard(r, c) &&
+                        _board.GetBoard()[r, c] != null &&
                         _board.GetBoard()[r, c]?.Color == player.Color)
                     {
                         flippablePieces.AddRange(piecesToFlip);
@@ -147,7 +147,7 @@ namespace OthelloGame
             return flippablePieces;
         }
 
-        private bool IsValidMove(int row, int col, Player player)
+        private bool IsValidMove(int row, int col, IPlayer player)
         {
             if (!_isInsideBoard(row, col)) return false;
             if (_board.GetBoard()[row, col] != null) return false;
@@ -155,7 +155,7 @@ namespace OthelloGame
             return GetFlippablePieces(row, col, player).Count > 0;
         }
 
-        private List<Position> GetValidMoves(Player player)
+        private List<Position> GetValidMoves(IPlayer player)
         {
             List<Position> validMoves = new List<Position>();
 

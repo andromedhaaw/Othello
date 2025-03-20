@@ -1,14 +1,16 @@
-namespace OthelloGame
+namespace OthelloGame.Models
 {
-    class Board
+    using OthelloGame.Interfaces;  // Ensure the IBoard interface is referenced
+
+    public class Board : IBoard  // Make sure Board implements IBoard
     {
         private int _size;
-        private Piece?[,] _grid;
+        private Piece?[,] _grid;  // Nullable array of Piece
 
         public Board(int size = 8)
         {
             _size = size;
-            _grid = new Piece?[_size, _size];
+            _grid = new Piece?[_size, _size];  // Initialize the grid
             InitBoard();
         }
 
@@ -25,7 +27,8 @@ namespace OthelloGame
             _grid[middle, middle] = new Piece(PieceColor.White);
         }
 
-        public Piece?[,] GetBoard()
+        // Implement the GetBoard() method from the IBoard interface
+        public Piece?[,] GetBoard()  // Return a nullable 2D array of Piece
         {
             return _grid;
         }

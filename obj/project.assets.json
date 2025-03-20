@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Batch 12\\.nuget\\packages\\": {}
+    "C:\\Users\\acer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\mermaidothelo.csproj",
+      "projectUniqueName": "D:\\bc formulatrix\\othellofix\\Othello\\mermaidothelo.csproj",
       "projectName": "mermaidothelo",
-      "projectPath": "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\mermaidothelo.csproj",
-      "packagesPath": "C:\\Users\\Batch 12\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Batch 12\\Documents\\mermaidothelo\\mermaidothelo\\obj\\",
+      "projectPath": "D:\\bc formulatrix\\othellofix\\Othello\\mermaidothelo.csproj",
+      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+      "outputPath": "D:\\bc formulatrix\\othellofix\\Othello\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Batch 12\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

@@ -35,7 +35,7 @@ namespace OthelloGame
 
         public void Play()
         {
-            _display.DisplayMessage("Welcome to Othello/Reversi!");
+            _display.DisplayMessage("Welcome to Othello!");
             _display.DisplayMessage("Instructions:");
             _display.DisplayMessage("- Enter your move in format like A1, C5, etc.");
             _display.DisplayMessage("- Black (O) plays first");

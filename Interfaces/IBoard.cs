@@ -4,6 +4,6 @@ namespace OthelloGame.Interfaces
 
     public interface IBoard
     {
-        Piece?[,] GetBoard();  // Make sure the return type is correct (Piece?[,])
+        Piece?[,] GetBoard();  
     }
 }

@@ -2,7 +2,7 @@ namespace OthelloGame.Models
 {
     using OthelloGame.Interfaces;  
 
-    public class Board : IBoard  // Make sure Board implements IBoard
+    public class Board : IBoard  // Board implements IBoard
     {
         private int _size;
         private Piece?[,] _grid;  // Nullable array of Piece

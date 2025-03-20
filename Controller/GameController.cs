@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using OthelloGame.Interfaces;  // For IBoard, IPlayer, IDisplay
-using OthelloGame.Models;     // For Position, Player, Piece, etc.
+using OthelloGame.Interfaces;  
+using OthelloGame.Models;     
 
 namespace OthelloGame
 {

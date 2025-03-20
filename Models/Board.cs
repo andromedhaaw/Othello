@@ -1,6 +1,6 @@
 namespace OthelloGame.Models
 {
-    using OthelloGame.Interfaces;  // Ensure the IBoard interface is referenced
+    using OthelloGame.Interfaces;  
 
     public class Board : IBoard  // Make sure Board implements IBoard
     {

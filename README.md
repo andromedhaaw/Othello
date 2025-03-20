@@ -1,6 +1,3 @@
-Certainly! Below is a sample `README.md` file for your Othello game written in C#:
-
----
 
 # Othello Game (C#)
 
